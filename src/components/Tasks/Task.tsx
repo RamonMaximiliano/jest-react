@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import './styles.css';
 
 type task = {
     id: number,
@@ -13,27 +14,28 @@ export default function Tasks() {
         const {data} = await axios.get("https://jsonplaceholder.typicode.com/todos?_limit=10");
         setTasks(data)
     }
-
-    return <>
+    let numero = Math.floor(Math.random()*100)
+    const item = {
+        id: numero,
+        title: "Hello there!"
+    }
+    function addTask() {
+        setTasks(newOne => [...newOne, item] )
+    }
+        return <>
+      <div className="main-content">
         <h1>My tasks</h1>
         {
             tasks.map((item: task) => {
-                return <div style={{display: "flex"}}>
+                return <div style={{display: "flex"}} key={item.id}>
                     <p>ID: {item.id}</p>
                     <p>Title: {item.title}</p>
                 </div>
             })
         }
         <button onClick={() => handleClick()}>Get Tasks</button>
+        <button onClick={() => addTask()}>Add One</button>
+        </div>
     </>
 }
 
-
-/*
-
-- Pegar os items e renderizar quando apertar no botão, usar Axios
-
-https://jsonplaceholder.typicode.com/todos?_limit=10
-
-
-*/
