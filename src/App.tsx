@@ -33,22 +33,18 @@ export default App;
 
 /*
 
+FELIPE: 1:00:00
+https://www.youtube.com/watch?v=0hVXjqHwvI0&ab_channel=FelipeRocha%E2%80%A2dicasparadevs
+
+
 PART 1:  13:40 min
 https://www.youtube.com/watch?v=p1bjHvX-DqM&ab_channel=FernandaKipper%7CDev
 
 SOME DUDE: 10:00 min
 https://www.youtube.com/watch?v=MQs8_KIj_PU&ab_channel=DevPleno
 
-DIEGO:  41:00 min
-https://www.youtube.com/watch?v=edXudaVB0Bg&ab_channel=Rocketseat
-
-
-
 PART 2:
 https://www.youtube.com/watch?v=0dRPPmRYM3o&ab_channel=FernandaKipper%7CDev
-
-FELIPE:
-https://www.youtube.com/watch?v=0hVXjqHwvI0&ab_channel=FelipeRocha%E2%80%A2dicasparadevs
 
 ANOTHER DUDE:
 https://www.youtube.com/watch?v=UKCIfwI8DxA&ab_channel=RicardoPedroni
