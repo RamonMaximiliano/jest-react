@@ -1,9 +1,17 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
-import { HashRouter } from 'react-router-dom';
+import { HashRouter, useNavigate } from 'react-router-dom';
 //Depende o teste se não tiver este import causa erro
 import "@testing-library/jest-dom"
+
+
+const mockNavigate = jest.fn();
+jest.mock("react-router", () => ({
+  ...jest.requireActual("react-router"),
+  //redeclarou o UseNavigate para uma função do jest para testes
+  useNavigate: () => mockNavigate
+}))
 
 test('renders learn react link', () => {
   //No arquivo de teste se existem routes o component precisa estar também wrapped em "HashRouter" ou "BrowserRouter"
@@ -13,10 +21,11 @@ test('renders learn react link', () => {
   expect(linkElement).toBeInTheDocument();
 });
 
-describe("test render", () => {
-  test("render the App", () => {
+describe("Test React hook function call", () => {
+  it("call navigate function when clicked", () => {
     render(<HashRouter><App /></HashRouter>);
-    const textreload = screen.getByText((/Tasks/i));
-    expect(textreload).toBeInTheDocument();
+    const naviagteAnchor = screen.getByText((/Navigate/i));
+    fireEvent.click(naviagteAnchor)
+    expect(mockNavigate).toHaveBeenCalledWith("/Tasks");
   })
 })
