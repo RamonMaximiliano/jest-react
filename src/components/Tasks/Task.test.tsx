@@ -4,10 +4,13 @@ import userEvent from '@testing-library/user-event';
 import { HashRouter } from 'react-router-dom';
 import { setupServer  } from 'msw/node'
 import { http, HttpResponse } from 'msw'
+import * as useFiles from "../hooks/useFiles"
 
 //Depende o teste se não tiver este import causa erro
 import "@testing-library/jest-dom"
 import Tasks from './Task';
+
+const APICALLSSPY = jest.spyOn(useFiles, "useFile");
 
 
 describe("Tasks component", () => {
@@ -19,6 +22,16 @@ describe("Tasks component", () => {
             //This debug function shows the HTML generated in the terminal
             userEvent.type(Ninput, "5");
             debug();
+        }) 
+
+         it("should call useSpy function",()=>{
+            render(<HashRouter><Tasks/></HashRouter>)
+            APICALLSSPY.mockReturnValue({
+                id:10,
+                title:"useFileSpyTest"
+            });
+            const WhateverID = screen.getByTestId("WhateverID")
+            expect(WhateverID).toBeInTheDocument();
         }) 
 
         //Testando se renderizou e se clicou no botão conferindo se o novo item consta na lista
@@ -33,34 +46,20 @@ describe("Tasks component", () => {
             /*Quando vai procurar por algo não existir no documento tem que usar o queryBytext ao invés do getbytext*/
             const unexist = screen.queryByText((/unexist/i))
             expect(unexist).not.toBeInTheDocument();
-        })
+        });
+
+        const worker = setupServer (
+            http.get("https://jsonplaceholder.typicode.com/todos", async () => HttpResponse.json({
+                "userId": 1,
+                "id": 1,
+                "title": "delectus aut autem",
+                "completed": false
+                }))
+        )
+    
+        beforeAll(() => {
+            // Start the interception.
+            worker.listen()
+          })
 })
-
-
-
-describe("API Testing", () => {
-
-    const worker = setupServer (
-        http.get("https://jsonplaceholder.typicode.com/todos", async () => HttpResponse.json({
-            "userId": 1,
-            "id": 1,
-            "title": "delectus aut autem",
-            "completed": false
-            }))
-    )
-
-    beforeAll(() => {
-        // Start the interception.
-        worker.listen()
-      })
- 
- it("Should sent GET method to API", ()=>{
-    const {debug} = render(<HashRouter><Tasks /></HashRouter>)
-    render(<HashRouter><Tasks/></HashRouter>)
-
-    debug();
-
- })
-})
-
 

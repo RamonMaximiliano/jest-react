@@ -42,9 +42,6 @@ export default App;
 
 /*
 
-PART 1:  20:00 min
-https://www.youtube.com/watch?v=p1bjHvX-DqM&ab_channel=FernandaKipper%7CDev
-
 FELIPE: 1:00:00
 https://www.youtube.com/watch?v=0hVXjqHwvI0&ab_channel=FelipeRocha%E2%80%A2dicasparadevs
 
@@ -56,6 +53,12 @@ https://www.youtube.com/watch?v=0dRPPmRYM3o&ab_channel=FernandaKipper%7CDev
 
 ANOTHER DUDE:
 https://www.youtube.com/watch?v=UKCIfwI8DxA&ab_channel=RicardoPedroni
+
+
+Testar se esta renderizando todas as tasks
+
+
+
 
 
 */

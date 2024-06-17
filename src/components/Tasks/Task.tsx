@@ -36,6 +36,7 @@ export default function Tasks() {
             <button onClick={() => handleClick()}>Get Tasks</button>
             <button onClick={() => addTask()}>Add One</button>
             <input type="number" placeholder="NumberInput"/>
+            <p data-testid="WhateverID">Data test ID</p>
         </div>
     </>
 }
