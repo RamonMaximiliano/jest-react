@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 import FirstTest from './components/FirstTest/FirstTest';
 import Tasks from './components/Tasks/Task';
@@ -9,6 +10,7 @@ const func = (prop: number) => { console.log(prop) };
 
 function App() {
   const navigate = useNavigate();
+  const [selectedDrop, setSelectedDrop] = useState<string>("");
 
   function navigateTo() {
     navigate("/Tasks");
@@ -34,7 +36,7 @@ function App() {
       <Routes>
         <Route path="/FirstTest" element={<FirstTest onClick={() => func(10)} />} />
         <Route path="/Tasks" element={<Tasks />} />
-        <Route path="/DropDown" element={<DropDown />} />
+        <Route path="/DropDown" element={<DropDown onSelect={setSelectedDrop}/>} />
       </Routes>
     </div>
   );
