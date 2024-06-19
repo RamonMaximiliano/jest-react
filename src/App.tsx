@@ -46,10 +46,7 @@ export default App;
 
 /*
 
-ANOTHER DUDE:
-https://www.youtube.com/watch?v=UKCIfwI8DxA&ab_channel=RicardoPedroni
-
-PART 2:
+PART 2: 02:00 min
 https://www.youtube.com/watch?v=0dRPPmRYM3o&ab_channel=FernandaKipper%7CDev
 
 
