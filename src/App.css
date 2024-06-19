@@ -2,7 +2,7 @@
   margin: 0;
   padding:0;
   box-sizing: border-box;
-  background-color: rgb(83, 83, 83);
+  background-color: rgb(129, 129, 129);
   }
 
 .App-header{
@@ -13,7 +13,7 @@
 }
 
 .header-list{
-    width:300px;
+    width:500px;
     display:flex;
     text-decoration: none;
     justify-content: space-between;

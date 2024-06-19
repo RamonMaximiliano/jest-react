@@ -1,0 +1,19 @@
+.main-div{
+    width:50%;
+    margin:auto;
+}
+
+.button{
+    padding:5px;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: white;
+}
+.opção {
+    padding:5px;
+    font-size: large;
+}
+.opção span{
+    font-weight: bold;
+}

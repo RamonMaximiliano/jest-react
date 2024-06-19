@@ -1,6 +1,7 @@
 import './App.css';
 import FirstTest from './components/FirstTest/FirstTest';
 import Tasks from './components/Tasks/Task';
+import DropDown from './components/dropDown/DropDown';
 import { Link, Route, Routes } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
@@ -22,7 +23,7 @@ function App() {
               <Link to="/FirstTest" className="nav-link">FirstTest</Link>
             </li>
             <li>
-              <Link to="/Tasks" className="nav-link">Tasks</Link>
+              <Link to="/DropDown" className="nav-link">DropDown</Link>
             </li>
             <li>
               <p className="nav-link" onClick={()=>navigateTo()}>Tasks Navigate</p>
@@ -33,6 +34,7 @@ function App() {
       <Routes>
         <Route path="/FirstTest" element={<FirstTest onClick={() => func(10)} />} />
         <Route path="/Tasks" element={<Tasks />} />
+        <Route path="/DropDown" element={<DropDown />} />
       </Routes>
     </div>
   );
